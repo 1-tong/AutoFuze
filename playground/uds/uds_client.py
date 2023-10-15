@@ -1,40 +1,48 @@
+'''
+Description: 
+Author: your name
+version: 
+Date: 2023-10-13 10:18:12
+LastEditors: your name
+LastEditTime: 2023-10-13 10:21:55
+'''
 import enum
 import socket
 import sys
 
-sys.path.append("../../protocols")
+#sys.path.append("../../protocols")
 
 # Import enum
-from uds.enum.nrc import NRC
-from uds.enum.session import Session
-from uds.enum.service_id import ServiceID
+from protocols.uds.enum.nrc import NRC
+from protocols.uds.enum.session import Session
+from protocols.uds.enum.service_id import ServiceID
 
 # Import PDU
-from uds.pdu.access_timing_parameters import AccessTimingParameters
-from uds.pdu.clear_diagnostic_information import ClearDiagnosticInformation
-from uds.pdu.communication_control import CommunicationControl
-from uds.pdu.control_dtc_settings import ControlDTCSettings
-from uds.pdu.ecu_reset import EcuReset
-from uds.pdu.input_output_control_by_identifier import IOControlByID
-from uds.pdu.link_control import LinkControl
-from uds.pdu.negative_response import NegativeResponse
-from uds.pdu.read_data_by_identifier import ReadDataByID
-from uds.pdu.read_data_by_identifier_periodic import ReadDataByIDPeriodic
-from uds.pdu.read_memory_by_address import ReadMemoryByAddress
-from uds.pdu.read_scaling_data_by_identifier import ReadScalingDataByID
-from uds.pdu.request_download import RequestDownload
-from uds.pdu.request_file_transfer import RequestFileTransfer
-from uds.pdu.request_upload import RequestUpload
-from uds.pdu.request_transfer_exit import RequestTransferExit
-from uds.pdu.response_on_event import ResponseOnEvent
-from uds.pdu.routine_control import RoutineControl
-from uds.pdu.security_access import SecurityAccess
-from uds.pdu.session_control import SessionControl
-from uds.pdu.tester_present import TesterPresent
-from uds.pdu.transfer_data import TransferData
-from uds.pdu.write_data_by_identifier import WriteDataByID
+from protocols.uds.pdu.access_timing_parameters import AccessTimingParameters
+from protocols.uds.pdu.clear_diagnostic_information import ClearDiagnosticInformation
+from protocols.uds.pdu.communication_control import CommunicationControl
+from protocols.uds.pdu.control_dtc_settings import ControlDTCSettings
+from protocols.uds.pdu.ecu_reset import EcuReset
+from protocols.uds.pdu.input_output_control_by_identifier import IOControlByID
+from protocols.uds.pdu.link_control import LinkControl
+from protocols.uds.pdu.negative_response import NegativeResponse
+from protocols.uds.pdu.read_data_by_identifier import ReadDataByID
+from protocols.uds.pdu.read_data_by_identifier_periodic import ReadDataByIDPeriodic
+from protocols.uds.pdu.read_memory_by_address import ReadMemoryByAddress
+from protocols.uds.pdu.read_scaling_data_by_identifier import ReadScalingDataByID
+from protocols.uds.pdu.request_download import RequestDownload
+from protocols.uds.pdu.request_file_transfer import RequestFileTransfer
+from protocols.uds.pdu.request_upload import RequestUpload
+from protocols.uds.pdu.request_transfer_exit import RequestTransferExit
+from protocols.uds.pdu.response_on_event import ResponseOnEvent
+from protocols.uds.pdu.routine_control import RoutineControl
+from protocols.uds.pdu.security_access import SecurityAccess
+from protocols.uds.pdu.session_control import SessionControl
+from protocols.uds.pdu.tester_present import TesterPresent
+from protocols.uds.pdu.transfer_data import TransferData
+from protocols.uds.pdu.write_data_by_identifier import WriteDataByID
 
-from uds.transport.ethernet.payload import diagnostic_message as eth
+from protocols.uds.transport.ethernet.payload import diagnostic_message as eth
 
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
